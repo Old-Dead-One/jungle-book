@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import HomePage from './pages/HomePage';
-import NewsFeed from './pages/NewsFeed';
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import Groups from './pages/Groups';
@@ -16,7 +15,6 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/newsfeed" element={<NewsFeed />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/groups" element={<Groups />} />

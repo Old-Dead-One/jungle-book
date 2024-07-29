@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 
 const SearchBar: React.FC = () => {
-    const [searchQuery, setSearchQuery] = useState('');
+    const [query, setQuery] = useState<string>('');
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(e.target.value);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(event.target.value);
     };
 
-    const handleSearchSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Implement search functionality here
-        console.log('Search query:', searchQuery);
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
+    const handleSearch = () => {
+        // Perform the search or navigate to a search results page
+        console.log('Search query:', query);
     };
 
     return (
-        <Form className="d-flex" onSubmit={handleSearchSubmit}>
-            <FormControl
-                type="search"
-                placeholder="Search"
-                className="mr-2"
-                aria-label="Search"
-                value={searchQuery}
-                onChange={handleSearchChange}
-            />
-            <Button variant="outline-success" type="submit">Search</Button>
-        </Form>
+        <FormControl
+            type="text"
+            placeholder="Search"
+            value={query}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown} // Handle Enter key
+            style={{ width: '100%' }} // Adjust the width as needed
+            className="me-2" // Add some margin to the right
+        />
     );
 };
 
