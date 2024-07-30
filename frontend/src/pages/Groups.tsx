@@ -2,9 +2,9 @@ import React from 'react';
 import CardLayout from '../components/common/CardLayout';
 
 const Groups: React.FC = () => {
-    const leftCard = { title: "My Groups", text: "Check out the groups you are part of." };
-    const centerCard = { title: "Group Feed", text: "Recent updates from your groups." };
-    const rightCard = { title: "Find Groups", text: "Search and join new groups." };
+    const leftCard = { title: "Groups", subtitle: "Discover what's new!", item1: "My Groups", item2: "Group Feed", item3: "Find Groups", };
+    const centerCard = { image: "https://via.placeholder.com/150", title: "Group Feed", subtitle: "Recent updates from your groups.", text: "Stay updated with the latest posts and discussions." };
+    const rightCard = { title: "Find Groups", subtitle: "Search and join new groups.", item1: "Group 1", item2: "Group 2", item3: "Group 3" };
 
     return (
         <div>

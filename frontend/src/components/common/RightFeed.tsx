@@ -1,17 +1,25 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
 
 interface RightFeedProps {
     title: string;
-    text: string;
+    subtitle: string;
+    item1: string;
+    item2: string;
+    item3: string;
 }
 
-const RightFeed: React.FC<RightFeedProps> = ({ title, text }) => {
+const RightFeed: React.FC<RightFeedProps> = ({ title, subtitle, item1, item2, item3 }) => {
     return (
         <Card>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Card.Text>{text}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>{item1}</ListGroup.Item>
+                    <ListGroup.Item>{item2}</ListGroup.Item>
+                    <ListGroup.Item>{item3}</ListGroup.Item>
+                </ListGroup>
             </Card.Body>
         </Card>
     );
